@@ -1,0 +1,25 @@
+/* Estilos navbar */
+
+nav {
+    margin: auto;
+    position: relative;
+    background-color: #2C3E50;
+    max-width: 1500px;
+}
+
+.tituloP {
+    text-decoration: none;
+    font-size: 29px;
+}
+
+.titulo {
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.opciones {
+    font-size: 18px;
+}
+
+
+/* Fin Estilos navbar */
