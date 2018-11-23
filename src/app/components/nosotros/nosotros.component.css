@@ -1,0 +1,93 @@
+/* Titulo principal y redes sociales  */
+
+.icono {
+    font-size: 25px;
+}
+
+
+/* Fin Titulo principal y redes sociales  */
+
+
+/* Contenido de nosotros  */
+
+.color-fondo {
+    background-color: #e9ecef;
+}
+
+.ticono {
+    font-size: 35px;
+}
+
+
+/* Fin Contenido de nosotros  */
+
+
+/* Animaciones */
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+
+/* Fin animaciones */
+
+
+/* Inicio quienes somos */
+
+.qsomos {
+    margin: 90px 0px 20px;
+}
+
+.tabs {
+    background-color: rgba(255, 255, 255, .5);
+    font-family: 'Fredoka One', cursive;
+}
+
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+    background-color: rgba(13, 71, 161, .1);
+}
+
+.tabs .indicator {
+    background-color: #42a5f5;
+}
+
+.img-float {
+    margin: 30px 20px 20px;
+}
+
+.content {
+    margin: 30px 20px 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.parrafo {
+    font-family: 'Nunito', sans-serif;
+}
+
+
+/* Fin quienes somos */

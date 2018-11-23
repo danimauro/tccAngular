@@ -8,19 +8,19 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
             <div class="d-inline">
-                <a class="navbar-brand font-weight-bold text-danger tituloP" href="index.html">Training</a>
-                <a class="navbar-brand font-weight-bold titulo text-white" href="index.html">Certifications Center</a>
+                <a class="navbar-brand font-weight-bold text-danger tituloP" [routerLink]="['/home']"> Training </a>
+                <a class="navbar-brand font-weight-bold titulo text-white" [routerLink]="['/home']">Certifications Center</a>
             </div>
 
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link font-weight-bold opciones text-white" href="index.html">Inicio</a>
+                    <a class="nav-link font-weight-bold opciones text-white" [routerLink]="['/home']" routerLinkActive="active">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold opciones text-white" href="nosotros.html">Nosotros</a>
+                    <a class="nav-link font-weight-bold opciones text-white" [routerLink]="['/nosotros']" routerLinkActive="active">Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold opciones text-white" href="contactenos.html">Contáctenos</a>
+                    <a class="nav-link font-weight-bold opciones text-white" href="contactenos.html" routerLinkActive="active">Contáctenos</a>
                 </li>
             </ul>
         </div>
