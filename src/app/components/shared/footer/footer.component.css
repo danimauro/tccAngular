@@ -1,0 +1,19 @@
+/* Inicio footer */
+
+.footer {
+    margin: auto;
+    position: relative;
+    padding-top: 1rem;
+    background-color: #2C3E50;
+    color: #fff;
+    font-weight: bold;
+    width: 100%;
+    max-width: 1500px;
+}
+
+.copyright {
+    background-color: #1a252f;
+}
+
+
+/* Fin footer */
