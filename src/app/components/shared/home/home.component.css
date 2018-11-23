@@ -68,7 +68,7 @@
 }
 
 
-/*@media only screen and (min-width: 760px)*/
+/* Fin contenido central video y opciones */
 
 
 /*menu principal en video*/
@@ -133,3 +133,65 @@ h4 .titulos {
 
 
 /*menu principal en video*/
+
+
+/*@media */
+
+h3 {
+    margin-top: 5px;
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+    .tituloGrande {
+        display: block;
+        text-align: center;
+        margin-bottom: 1em;
+        font-size: 1em;
+        font-weight: bold;
+        color: #fff;
+    }
+    .subTitulo {
+        margin-top: 1.5em;
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        font-size: .8em;
+        color: #fff;
+    }
+    .contenido {
+        top: 80px;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 800px) {
+    .tituloGrande {
+        display: block;
+        text-align: center;
+        margin-bottom: 2em;
+        font-size: 0.9em;
+        font-weight: bold;
+        color: #fff;
+    }
+    .subTitulo {
+        margin-top: 2em;
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        font-size: .7em;
+        color: #fff;
+    }
+    .contenido {
+        top: 130px;
+        position: relative;
+        padding-bottom: 200px;
+    }
+}
+
+@media only screen and (min-width: 250px) and (max-width: 800px) {
+    video {
+        display: none;
+    }
+}
+
+
+/* Fin @media */
