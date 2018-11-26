@@ -9,9 +9,9 @@
                 <div class="col-md-4">
                     <div class="login-container">
                         <div id="output"></div>
-                        <a href="umanizales.html"><img src="assets/img/logo_um.png" class="avatar" alt=""></a>
+                        <a [routerLink]="['/um']"><img src="assets/img/logo_um.png" class="avatar" alt=""></a>
                         <div class="form-box">
-                            <a href="umanizales.html">
+                            <a [routerLink]="['/um']">
                                 <h4>Universidad de Manizales</h4>
                             </a>
                         </div>
@@ -31,9 +31,9 @@
                 <div class="col-md-4">
                     <div class="login-container">
                         <div id="output"></div>
-                        <a href="unacional.html"><img src="assets/img/unc.png" class="avatar" alt=""></a>
+                        <a [routerLink]="['/unc']"><img src="assets/img/unc.png" class="avatar" alt=""></a>
                         <div class="form-box">
-                            <a href="unacional.html">
+                            <a [routerLink]="['/unc']">
                                 <h4>Universidad Nacional</h4>
                             </a>
                         </div>
@@ -49,10 +49,10 @@
 
     <div class="averlay"></div>
 
-    <video autoplay loop [muted]="true">  
-               
+    <video autoplay loop [muted]="true">
+
       <source  src="assets/video/video_UdeManizales.mp4" type="video/mp4"/>
-    
+
     </video>
 
 </div>
