@@ -1,79 +1,78 @@
 <!--Inicio tutulo contactenos -->
-<br><br>
     <div class="container animated fadeIn">
-        <div class="row mt-5 text-center d-block">
+        <div class="row mt-5 text-center d-block ">
             <h5><span class="fas fa-phone-volume icono text-info"></span></h5>
             <p class="lead font-weight-bold">Contáctenos</p>
         </div>
     </div>
 
-<!--Fin tutulo contactenos -->    
+<!--Fin tutulo contactenos -->
 
 <!-- Inicio formulario y mapa contactenos -->
 <div class="container shadow p-5 my-4 border rounded animated fadeIn">
   <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
           <form [formGroup]="contactenos" (ngSubmit)="enviarPregunta()">
-              <div class="form-row" [ngClass]="{ 'has-danger': !contactenos.get('nombrecompleto').valid}">
-                  <div class="form-group col-md-12" >
+              <div class="form-row">
+                  <div class="form-group col-md-12" [ngClass]="{ 'has-danger': !contactenos.get('nombrecompleto').valid}" >
 
                       <label for="nombre">Nombres Completo</label>
-                      <input type="text" 
-                            class="form-control" 
+                      <input type="text"
+                            class="form-control"
                             placeholder="Nombre Completo"
                             formControlName="nombrecompleto">
                       <div *ngIf="contactenos.controls['nombrecompleto'].errors?.required"
                             class="form-control-feedback">
-                             Su nombre es necesario   
+                             Su nombre es necesario
                      </div>
                      <div *ngIf="contactenos.controls['nombrecompleto'].errors?.minlength"
                             class="form-control-feedback">
-                             Por lo menos 8 caracteres   
-                     </div>            
+                             Por lo menos 8 caracteres
+                     </div>
                   </div>
               </div>
               <div class="form-row">
                   <div class="form-group col-md-6">
 
                       <label for="tel">Telefono</label>
-                      <input type="text"
-                            class="form-control" 
+                      <input type="tel"
+                            class="form-control"
                             placeholder="Telefono.."
                             formControlName="telefono">
                   </div>
                   <div class="form-group col-md-6">
                       <label for="email">Correo Electrónico</label>
-                      <input type="email" 
+                      <input type="email"
                             class="form-control"
                             placeholder="micorreo@correo.com"
                             formControlName="correo">
                        <div *ngIf="contactenos.controls['correo'].errors?.required"
                        class="form-control-feedback">
-                        Su correo es necesario   
+                        Su correo es necesario
                       </div>
                       <div *ngIf="contactenos.controls['correo'].errors?.pattern"
                             class="form-control-feedback">
-                            Formato de correo incorrecta    
-                     </div>             
+                            Formato de correo incorrecta
+                     </div>
                   </div>
               </div>
               <div class="form-group">
                   <label for="mensaje">Mensaje</label>
-                  <textarea type="text" 
+                  <textarea type="text"
                             class="form-control"
-                            rows="2" 
+                            rows="2"
                             placeholder="¿ Qué nos quieres preguntar ?"
                             formControlName="pregunta">
                   </textarea>
                   <div *ngIf="!contactenos.controls['pregunta'].valid"
                        class="form-control-feedback">
-                        Su pregunta es necesaria   
-                  </div> 
+                        Su pregunta es necesaria
+                  </div>
               </div>
 
-              <button type="button" class="btn btn-primary">Enviar</button>
+              <button type="button" [disabled]="contactenos.invalid" class="btn btn-primary">Enviar</button>
 
-              {{contactenos.valid}}
+
           </form>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">

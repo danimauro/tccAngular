@@ -1,0 +1,19 @@
+/* inicio contacto*/
+
+.icono {
+  font-size: 25px;
+}
+
+.mapa{
+
+  height: 300px;
+  width: 100%;
+  border: 0;
+  padding: 5px;
+}
+
+.form-contacto{
+  padding: 20px;
+}
+
+
