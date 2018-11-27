@@ -13,9 +13,6 @@ import { HomeComponent } from './components/shared/home/home.component';
 //Components
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { ContactenosComponent } from './components/contactenos/contactenos.component';
-import { UncComponent } from './components/unc/unc.component';
-import { UmComponent } from './components/um/um.component';
-
 
 
 @NgModule({
@@ -25,9 +22,7 @@ import { UmComponent } from './components/um/um.component';
     FooterComponent,
     HomeComponent,
     NosotrosComponent,
-    ContactenosComponent,
-    UncComponent,
-    UmComponent
+    ContactenosComponent
   ],
   imports: [
     BrowserModule,
