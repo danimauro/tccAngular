@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HomeComponent } from './components/shared/home/home.component';
+
+//Components
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { ContactenosComponent } from './components/contactenos/contactenos.component';
 
@@ -21,7 +23,7 @@ import { ContactenosComponent } from './components/contactenos/contactenos.compo
     FooterComponent,
     HomeComponent,
     NosotrosComponent,
-    ContactenosComponent
+    ContactenosComponent,
   ],
   imports: [
     BrowserModule,
