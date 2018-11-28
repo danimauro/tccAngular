@@ -4,3 +4,26 @@
       <p class="lead">Siempre pensado en brindar la mejor calidad</p>
   </div>
 </div>
+
+<div class="container shadow px-5 p-5 colorFondo animated fadeIn">
+  
+    <div class="d-block m-auto text-center" >
+        <img [src]='organizacion.imagen' class="avatar" alt="" class="img img-fluid img-thumbnail">
+        <h2 class="d-block text-center mb-5 mt-2"> {{ organizacion.nombre }} </h2>
+    </div>
+
+  <!--inicio cuerpo-->
+
+  <div class="container">
+      <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let facultad of organizacion.facultad">
+              <div class="card text-center shadow mb-3" >
+                  <div class="card-body">
+                      <h5 class="card-title"><span class="fas fa-file-signature icono text-info"></span></h5>
+                      <p class="card-text">{{facultad.nombrefa}}</p>
+                      <a href="#" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">Ver Programas</a>
+                  </div>
+              </div>
+          </div>
+          
+<!--fin cuerpo-->

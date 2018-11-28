@@ -11,7 +11,7 @@ const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'nosotros', component: NosotrosComponent},
   { path: 'contactenos', component: ContactenosComponent},
-  { path: 'organizacion', component: OrganizacionComponent},
+  { path: 'organizaciones', component: OrganizacionComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home'}
 
 ];

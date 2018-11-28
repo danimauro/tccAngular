@@ -13,6 +13,7 @@ import { HomeComponent } from './components/shared/home/home.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { ContactenosComponent } from './components/contactenos/contactenos.component';
 import { OrganizacionComponent } from './components/organizacion/organizacion.component';
+import { ProgramaComponent } from './components/programa/programa.component';
 
 
 
@@ -25,6 +26,7 @@ import { OrganizacionComponent } from './components/organizacion/organizacion.co
     NosotrosComponent,
     ContactenosComponent,
     OrganizacionComponent,
+    ProgramaComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,4 +37,5 @@ import { OrganizacionComponent } from './components/organizacion/organizacion.co
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
