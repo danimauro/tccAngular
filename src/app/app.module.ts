@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { APP_ROUTING } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -13,6 +12,8 @@ import { HomeComponent } from './components/shared/home/home.component';
 //Components
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { ContactenosComponent } from './components/contactenos/contactenos.component';
+import { OrganizacionComponent } from './components/organizacion/organizacion.component';
+import { ProgramaComponent } from './components/programa/programa.component';
 
 
 @NgModule({
@@ -22,7 +23,9 @@ import { ContactenosComponent } from './components/contactenos/contactenos.compo
     FooterComponent,
     HomeComponent,
     NosotrosComponent,
-    ContactenosComponent
+    ContactenosComponent,
+    OrganizacionComponent,
+    ProgramaComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,4 +36,5 @@ import { ContactenosComponent } from './components/contactenos/contactenos.compo
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
