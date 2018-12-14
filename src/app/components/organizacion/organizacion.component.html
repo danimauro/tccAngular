@@ -1,8 +1,8 @@
 <!--inicio header de vista organizaciones -->
-section class="text-center bg-light py-4">
+<section class="text-center bg-light py-4">
 
     <div class="container">
-    
+
         <h2 class="mb-3">
             <!--Nombre dependencia o organizacion -->
             <strong>Facultades</strong>
@@ -13,48 +13,46 @@ section class="text-center bg-light py-4">
                 <div class="bg-white p-4 shadow-sm rounded-circle pulse raise">
                     <!--URL link organizacion -->
                     <a [href]='organizacion.descripcion'>
-                    <!--Imagen organizacion -->    
-                    <img [src]='organizacion.imagen' class="img img-fluid animated pulse" alt=""></a>
+                        <!--Imagen organizacion -->
+                        <img [src]='organizacion.imagen' class="img img-fluid animated pulse" alt=""></a>
                 </div>
-                    <!--Nombre organizacion -->
-                    <h4 class="mt-4 animated pulse">{{ organizacion.nombre }}</h4>
-                </div>
+                <!--Nombre organizacion -->
+                <h4 class="mt-4 animated pulse">{{ organizacion.nombre }}</h4>
             </div>
-
         </div>
 
-    </section>
+    </div>
 
-<!--fin header de vista organizaciones -->    
+</section>
+
+<!--fin header de vista organizaciones -->
 
 <!--inicio panel vista de facultades -->
-    <div class="container ">
-        <div class="bg-trasparent m-4 p-3 ">
+<div class="container ">
+    <div class="bg-trasparent m-4 p-3 ">
 
-            <div class="row">
-                <!--*ngfor recorre el objero organizacion dentro del mismo se encuentra el arreglo de de facultades  -->
-                <div class="col-lg-3 col-sm-6 col-xs-12"*ngFor="let facultad of organizacion.facultad">
-                    <!--animacion de aparecer desde el footer todos los elementos  -->
-                    <div class="mb-4 item animated fadeInUp">
-                        <div class=" text-center mb-3 animated flip ">
-                            <!--se trae el nombre de la facultad dentro del arreglo  -->
-                            <h4>{{facultad.nombrefa}}
-                            </h4>
-                        </div>
-                        <div>
-                            <a href="" class="">
-                                <!--se trae la url de la imagen  -->
-                                <img [src]='facultad.imagen' class="img-fluid img mx-auto d-block rounded-circle raise "/>
-                            </a>
-                                <!-- se trae la informacion sobre la facultad -->
-                            <p class="card-text text-center">{{facultad.descripcion}}</p>
-                        </div>
+        <div class="row">
+            <!--*ngfor recorre el objero organizacion dentro del mismo se encuentra el arreglo de de facultades  -->
+            <div class="col-lg-3 col-sm-6 col-xs-12" *ngFor="let facultad of organizacion.facultad">
+                <!--animacion de aparecer desde el footer todos los elementos  -->
+                <div class="mb-4 item animated fadeInUp">
+                    <div class=" text-center mb-3 animated flip ">
+                        <!--se trae el nombre de la facultad dentro del arreglo  -->
+                        <h4>{{facultad.nombrefa}}
+                        </h4>
+                    </div>
+                    <div>
+                        <a href="" class="">
+                            <!--se trae la url de la imagen  -->
+                            <img [src]='facultad.imagen' class="img-fluid img mx-auto d-block rounded-circle raise " />
+                        </a>
+                        <!-- se trae la informacion sobre la facultad -->
+                        <p class="card-text text-center mt-3">{{facultad.descripcion}}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
- <!--final panel vista de facultades -->   
-  
-
+<!--final panel vista de facultades -->
