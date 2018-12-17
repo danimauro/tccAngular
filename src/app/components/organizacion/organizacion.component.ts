@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Organizacion } from '../../models/organizacion.models';
+import { Organizacion } from '../../Interfaces/organizacion.interface';
 
 @Component({
   selector: 'app-organizacion',

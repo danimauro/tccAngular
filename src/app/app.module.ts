@@ -4,6 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { APP_ROUTING } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//http
+import { HttpClientModule } from '@angular/common/http';
+
 //Shared
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
@@ -30,6 +33,7 @@ import { ProgramaComponent } from './components/programa/programa.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     APP_ROUTING
   ],
