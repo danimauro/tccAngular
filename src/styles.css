@@ -4,3 +4,12 @@
 body {
     font-family: 'Dosis', sans-serif;
 }
+
+
+.raise:hover {
+    box-shadow: 0 3px 3px 3px rgb(165, 162, 162);
+    transform: translateY(-0.5em);
+    transition-duration: 0.5s;
+    
+  }
+  

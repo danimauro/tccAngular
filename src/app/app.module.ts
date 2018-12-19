@@ -16,7 +16,7 @@ import { HomeComponent } from './components/shared/home/home.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { ContactenosComponent } from './components/contactenos/contactenos.component';
 import { OrganizacionComponent } from './components/organizacion/organizacion.component';
-import { ProgramaComponent } from './components/programa/programa.component';
+import { DependenciaComponent } from './components/dependencia/dependencia.component';
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { ProgramaComponent } from './components/programa/programa.component';
     NosotrosComponent,
     ContactenosComponent,
     OrganizacionComponent,
-    ProgramaComponent,
+    DependenciaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-<div class="promo-video">
+<div class="promo-video" *ngIf="cargo">
 
     <div class="contenido animated fadeIn">
         <div class="container-fluid">
@@ -6,13 +6,13 @@
             <p class="tituloGrande">CENTRO DE FORMACIÓN PARA CERTIFICACIONES</p>
 
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4" *ngFor="let organizacion of organizaciones">
                     <div class="login-container">
                         <div id="output"></div>
-                        <a [routerLink]="['/organizaciones']"><img src="assets/img/logo_um.png" class="avatar" alt=""></a>
+                        <a [routerLink]="['/organizaciones', organizacion.cod]"><img [src]="organizacion.imagen" class="avatar" alt=""></a>
                         <div class="form-box">
-                            <a [routerLink]="['/organizaciones']">
-                                <h4>Universidad de Manizales</h4>
+                            <a [routerLink]="['/organizaciones', organizacion.cod]">
+                                <h4>{{ organizacion.nombre }}</h4>
                             </a>
                         </div>
                     </div>

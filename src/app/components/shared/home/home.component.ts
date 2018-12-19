@@ -9,17 +9,25 @@ import { Organizacion } from '../../../Interfaces/organizacion.interface';
 })
 export class HomeComponent implements OnInit {
 
+  // Variables del componente
   public organizaciones:Organizacion[] = [];
+  public cargo: boolean;
 
-  constructor(private _homeService:OrganizacionService) { }
+  constructor(private _organizacionService:OrganizacionService) { }
 
   ngOnInit() {
+    
+    // Get organizaciones activar en el sistemas
+    this._organizacionService.getOrganizaciones().subscribe( (resOrganizaciones:Organizacion[]) => {
+      this.organizaciones = resOrganizaciones;
+      this.cargo = true;
+    }, (errorService) => {
 
-    /*this._homeService.getOrganizaciones().subscribe( (organizaciones:Organizacion[]) => {
-      console.log(organizaciones);
-    }, (error) => {
-      console.log(error);
-    });*/
+      if(errorService.status == 500 || errorService.status == 400){
+          console.log(errorService.error.message);
+      }
+
+    });
 
   }
 

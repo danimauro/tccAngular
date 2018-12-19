@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Organizacion } from '../Interfaces/organizacion.interface';
-import { environment } from '../../environments/environment.dev';
+import { environment } from '../../environments/environment.prod';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -11,7 +11,8 @@ export class OrganizacionService {
 
   // Se declaran las variables de tipo interface Organización
   public organizaciones: Organizacion[] = [];
-  public organizacion: Organizacion;
+  public orgaDep: Organizacion;
+
   //Url APIRest
   private url:string = environment.apiUrl; 
   
@@ -23,10 +24,24 @@ export class OrganizacionService {
   // Devuelve un arraglo con las organizaciones activas en el API
   getOrganizaciones(){
 
-    return this.http.get<Organizacion[]>(`${this.url}/organizaciones`).pipe( map( (resOrga:Organizacion[]) => {
-      this.organizaciones = resOrga;
-      return this.organizaciones;
+    return this.http.get<Organizacion[]>(`${this.url}/organizaciones`)
+                    .pipe( map( (resOrga:Organizacion[]) => {
+                    this.organizaciones = resOrga['organiDB'];
+                    return this.organizaciones;
     }));
 
   }
+  
+  // Trae una organizacion con su respectivas dependencias 
+  getOrgaDependencias(cod:string){
+    
+    return this.http.get(`${ this.url }/dependencias/${ cod }`)
+                    .pipe( map( (resOrgaDepen:Organizacion) => {
+                          this.orgaDep = resOrgaDepen['organiDB'][0];
+                          return this.orgaDep;
+    }));
+
+
+  }
+
 }
