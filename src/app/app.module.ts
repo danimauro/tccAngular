@@ -17,6 +17,7 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { ContactenosComponent } from './components/contactenos/contactenos.component';
 import { OrganizacionComponent } from './components/organizacion/organizacion.component';
 import { DependenciaComponent } from './components/dependencia/dependencia.component';
+import { EventoComponent } from './components/evento/evento.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { DependenciaComponent } from './components/dependencia/dependencia.compo
     NosotrosComponent,
     ContactenosComponent,
     OrganizacionComponent,
-    DependenciaComponent
+    DependenciaComponent,
+    EventoComponent
   ],
   imports: [
     BrowserModule,

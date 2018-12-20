@@ -1,3 +1,5 @@
+import { Invitado } from '../Interfaces/Invitado.interface'
+
 export interface Evento {
     cod: string;
     nombre:string;
@@ -9,4 +11,5 @@ export interface Evento {
     costo:string;
     folleto?:string;
     estado?: boolean;
+    invitado?: Invitado;
 }

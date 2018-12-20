@@ -21,6 +21,6 @@ export class ContactenosComponent {
       'pregunta':       new FormControl('', Validators.required )
     })
 
-   }
+  }
 
 }
