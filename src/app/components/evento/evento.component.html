@@ -1,178 +1,148 @@
 <div *ngIf="cargo">
 
-  <!-- Titulo del evento -->
-  <div class="titulo-evento shadow-sm mb-4">
-    <div class="container">
-        <h2 class="text-center font-weight-bold">{{ infoEvento.nombre }}</h2>
-        <p class="lead mt-3 text-center">{{ infoEvento.descrip }}</p>
+    <!-- Titulo del evento -->
+    <div class="titulo-evento shadow-sm mb-4">
+        <div class="container">
+            <h2 class="text-center font-weight-bold">{{ infoEvento.nombre }}</h2>
+            <p class="lead mt-3 text-center">{{ infoEvento.descrip }}</p>
+        </div>
     </div>
-  </div>
 
-  <div class="container-fluid">
-    <div class="row justify-content-md-center">
-        <div class="col-xs-12 col-md-6 mx-1 p-4 border shadow mt-2 mb-4">
-          <div class="mb-3">
-            <img [src]="infoEvento.imagen" alt="admin-empresa" class="img img-fluid img-thumbnail shadow d-block m-auto">
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-xs-12 col-md-6 mx-1 p-4 border shadow mt-2 mb-4">
+                <div class="mb-3">
+                    <img [src]="infoEvento.imagen" alt="admin-empresa" class="img img-fluid img-thumbnail shadow d-block m-auto">
 
-            <div class="d-block mt-4 text-center">
-                <h5><span class="far fa-file-pdf icono text-info"></span></h5>
-                <a [href]="infoEvento.folleto" target="_blanck" class="btn btn-outline-primary">Ver folleto</a>
-            </div>
+                    <div class="d-block mt-4 text-center">
+                        <h5><span class="far fa-file-pdf icono text-info"></span></h5>
+                        <a [href]="infoEvento.folleto" target="_blanck" class="btn btn-outline-primary">Ver folleto</a>
+                    </div>
 
-            <div class="accordion mt-5" id="accordionExample">
-                <div class="card shadow">
+                    <div class="accordion mt-5" id="accordionExample">
+                        <div class="card shadow">
 
-                    <div class="card-header" id="headingTwo">
-                        <h5 class="mb-0">
-                            <a class="btn btn-link font-weight-bold collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <a class="btn btn-link font-weight-bold collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             Contenido
                             </a>
-                        </h5>
-                    </div>
-                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body">
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body">
 
-                          {{ infoEvento.contenido }}
-                          <br>
-                          <hr>
-                          <strong>Fecha de Inicio:</strong>  {{ infoEvento.fecinicio }}
-                          <br>
-                          <strong>Fecha de Finalización:</strong> {{ infoEvento.fecfin }}
-                          <hr>
-                          <strong>Inversión:</strong> {{ infoEvento.costo }}
+                                    {{ infoEvento.contenido }}
+                                    <br>
+                                    <hr>
+                                    <strong>Fecha de Inicio:</strong> {{ infoEvento.fecinicio }}
+                                    <br>
+                                    <strong>Fecha de Finalización:</strong> {{ infoEvento.fecfin }}
+                                    <hr>
+                                    <strong>Inversión:</strong> {{ infoEvento.costo }}
+
+                                </div>
+                            </div>
 
                         </div>
-                    </div>
 
-                </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 align-self-start border mx-1 mt-2 p-3 shadow">
-            <div class="d-block mb-4">
-                <h5 class="text-center font-weight-bold"> ¿ Te interesa ? Envíanos tus datos </h5>
-            </div>
-            <form [formGroup]="requestInfo" (ngSubmit)="postRequestInfo(requestInfo)">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        
-                        <label for="inputEmail4">Nombres</label>
-
-                        <input  type="text" 
-                                class="form-control" [ngClass]="{ 'is-invalid': !requestInfo.get('nombre').valid}"
-                                placeholder="Nombre"
-                                formControlName="nombre">
-
-                        <div *ngIf="requestInfo.controls['nombre'].errors?.required"
-                                class="invalid-feedback">
-                                 Su nombre es necesario
-                        </div>
-                        <div *ngIf="requestInfo.controls['nombre'].errors?.maxlength"
-                                class="invalid-feedback">
-                                Máximo 50 caracteres
-                        </div>
-                    </div>
-
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">Apellidos</label>
-                        <input  type="text" 
-                                class="form-control" [ngClass]="{ 'is-invalid': !requestInfo.get('apellido').valid}"
-                                placeholder="Apellido"
-                                formControlName="apellido">
-
-                        <div *ngIf="requestInfo.controls['apellido'].errors?.required"
-                                class="invalid-feedback">
-                                 Su apellido es necesario
-                        </div>
-                        <div *ngIf="requestInfo.controls['apellido'].errors?.maxlength"
-                                class="invalid-feedback">
-                                Máximo 50 caracteres
-                        </div>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputCity">Correo Electrónico</label>
+            </div>
+            <div class="col-md-4 align-self-start border mx-1 mt-2 p-3 shadow">
+                <div class="d-block mb-4">
+                    <h5 class="text-center font-weight-bold"> ¿ Te interesa ? Envíanos tus datos </h5>
+                </div>
+                <form [formGroup]="requestInfo" (ngSubmit)="postRequestInfo()">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
 
-                        <input type="text" 
-                               class="form-control" [ngClass]="{ 'is-invalid': !requestInfo.get('email').valid}" 
-                               formControlName="email"
-                               placeholder="correo@dominio.com">
+                            <label for="inputEmail4">Nombres</label>
 
-                        <div *ngIf="requestInfo.controls['email'].errors?.required"
-                                class="invalid-feedback">
+                            <input type="text" class="form-control" [ngClass]="{ 'is-invalid': !requestInfo.get('nombre').valid}" placeholder="Nombre" formControlName="nombre">
+
+                            <div *ngIf="requestInfo.controls['nombre'].errors?.required" class="invalid-feedback">
+                                Su nombre es necesario
+                            </div>
+                            <div *ngIf="requestInfo.controls['nombre'].errors?.maxlength" class="invalid-feedback">
+                                Máximo 50 caracteres
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Apellidos</label>
+                            <input type="text" class="form-control" [ngClass]="{ 'is-invalid': !requestInfo.get('apellido').valid}" placeholder="Apellido" formControlName="apellido">
+
+                            <div *ngIf="requestInfo.controls['apellido'].errors?.required" class="invalid-feedback">
+                                Su apellido es necesario
+                            </div>
+                            <div *ngIf="requestInfo.controls['apellido'].errors?.maxlength" class="invalid-feedback">
+                                Máximo 50 caracteres
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">Correo Electrónico</label>
+
+                            <input type="text" class="form-control" [ngClass]="{ 'is-invalid': !requestInfo.get('email').valid}" formControlName="email" placeholder="correo@dominio.com">
+
+                            <div *ngIf="requestInfo.controls['email'].errors?.required" class="invalid-feedback">
                                 Su correo es necesario
-                        </div>
-                        <div *ngIf="requestInfo.controls['email'].errors?.minlength"
-                                class="invalid-feedback">
-                               Por lo menos 8 caracteres
-                        </div>
-                        <div *ngIf="requestInfo.controls['email'].errors?.pattern"
-                                class="invalid-feedback">
+                            </div>
+                            <div *ngIf="requestInfo.controls['email'].errors?.minlength" class="invalid-feedback">
+                                Por lo menos 8 caracteres
+                            </div>
+                            <div *ngIf="requestInfo.controls['email'].errors?.pattern" class="invalid-feedback">
                                 Formato de correo incorrecta
-                        </div>
-                        <div *ngIf="requestInfo.controls['email'].errors?.maxlength"
-                                class="invalid-feedback">
+                            </div>
+                            <div *ngIf="requestInfo.controls['email'].errors?.maxlength" class="invalid-feedback">
                                 Máximo 50 caracteres
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputCity">Teléfono</label>
-                        <input type="text" 
-                               class="form-control" [ngClass]="{ 'is-invalid': !requestInfo.get('tel').valid}" 
-                               formControlName="tel" 
-                               placeholder="Teléfono">
-                        <div *ngIf="requestInfo.controls['tel'].errors?.minlength"
-                               class="invalid-feedback">
-                               Por lo menos 8 caracteres
-                        </div>
-                        <div *ngIf="requestInfo.controls['tel'].errors?.maxlength"
-                               class="invalid-feedback">
-                               Máximo 20 caracteres
-                        </div>
-                        <div *ngIf="requestInfo.controls['tel'].errors?.required"
-                                class="invalid-feedback">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">Teléfono</label>
+                            <input type="text" class="form-control" [ngClass]="{ 'is-invalid': !requestInfo.get('tel').valid}" formControlName="tel" placeholder="Teléfono">
+                            <div *ngIf="requestInfo.controls['tel'].errors?.minlength" class="invalid-feedback">
+                                Por lo menos 8 caracteres
+                            </div>
+                            <div *ngIf="requestInfo.controls['tel'].errors?.maxlength" class="invalid-feedback">
+                                Máximo 20 caracteres
+                            </div>
+                            <div *ngIf="requestInfo.controls['tel'].errors?.required" class="invalid-feedback">
                                 El telefóno es necesario
+                            </div>
+
                         </div>
-                        
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="mensaje">Mensaje</label>
-                    
-                    <textarea type="text" 
-                              rows="2" 
-                              class="form-control" [ngClass]="{ 'is-invalid': !requestInfo.get('mensaje').valid}"
-                              formControlName="mensaje"
-                              placeholder="¿ Qué nos quieres preguntar ?"></textarea>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
 
-                    <div *ngIf="requestInfo.controls['mensaje'].errors?.required"
-                         class="invalid-feedback">
-                         Su mensaje es necesario
-                    </div>
-                    <div *ngIf="requestInfo.controls['mensaje'].errors?.minlength"
-                         class="invalid-feedback">
-                         Por lo menos 8 caracteres
-                    </div>
-                    <div *ngIf="requestInfo.controls['mensaje'].errors?.maxlength"
-                         class="invalid-feedback">
-                         Máximo 200 caracteres
-                    </div>
+                        <textarea type="text" rows="2" class="form-control" [ngClass]="{ 'is-invalid': !requestInfo.get('mensaje').valid}" formControlName="mensaje" placeholder="¿ Qué nos quieres preguntar ?"></textarea>
 
-                </div>
-                <div class="form-group">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
+                        <div *ngIf="requestInfo.controls['mensaje'].errors?.required" class="invalid-feedback">
+                            Su mensaje es necesario
+                        </div>
+                        <div *ngIf="requestInfo.controls['mensaje'].errors?.minlength" class="invalid-feedback">
+                            Por lo menos 8 caracteres
+                        </div>
+                        <div *ngIf="requestInfo.controls['mensaje'].errors?.maxlength" class="invalid-feedback">
+                            Máximo 200 caracteres
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" required>
+                            <label class="form-check-label" for="gridCheck">
                             Acepto la política de tratamiento de datos
                         </label>
+                        </div>
                     </div>
-                </div>
-                <button type="submit" [disabled]="!requestInfo.valid" class="btn btn-primary">Enviar</button>
-            </form>
+                    <button type="submit" [disabled]="!requestInfo.valid" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
         </div>
     </div>
-  </div>
 
 </div>
