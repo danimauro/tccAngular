@@ -19,6 +19,9 @@ import { OrganizacionComponent } from './components/organizacion/organizacion.co
 import { DependenciaComponent } from './components/dependencia/dependencia.component';
 import { EventoComponent } from './components/evento/evento.component';
 
+// Bootstrap para angular
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +40,7 @@ import { EventoComponent } from './components/evento/evento.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgbModule,
     APP_ROUTING
   ],
   providers: [],

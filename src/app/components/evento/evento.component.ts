@@ -19,6 +19,12 @@ export class EventoComponent {
   // Formulario de solicutud de información
   requestInfo: FormGroup;
 
+  //alert
+  public alertClosed: boolean = false;
+  public type:string;
+  public mensaje:string;
+
+
   constructor(private _eventoService:EventoService,
               private _requestInfoService:RequestInfoService,
               public _activatedRoute:ActivatedRoute) { 
@@ -65,12 +71,17 @@ export class EventoComponent {
 
     this._requestInfoService.getRequestInfo(this.requestInfo.value).subscribe( (resInfo:any) =>{
         
-        console.log(resInfo);
+        this.alertClosed = true;
+        this.type = "success";
+        this.mensaje = resInfo.message; 
         
     }, (errorService) => {
 
         if(errorService.status == 500 || errorService.status == 400){
-            console.log(errorService.error.message);
+
+            this.alertClosed = true;
+            this.type = "danger";
+            this.mensaje = "Error al enviar el mensaje, intentalo mas tarde"; 
         }
 
     });

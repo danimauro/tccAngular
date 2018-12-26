@@ -53,6 +53,9 @@
                 <div class="d-block mb-4">
                     <h5 class="text-center font-weight-bold"> ¿ Te interesa ? Envíanos tus datos </h5>
                 </div>
+
+                <ngb-alert [type]="type" class="my-3" *ngIf="alertClosed" (close)="alertClosed = false"> {{ mensaje }}</ngb-alert>
+
                 <form [formGroup]="requestInfo" (ngSubmit)="postRequestInfo()">
                     <div class="form-row">
                         <div class="form-group col-md-6">

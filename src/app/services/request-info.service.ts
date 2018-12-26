@@ -4,6 +4,7 @@ import { environment } from '../../environments/environment.prod';
 import { map } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { RequestInfo } from '../Interfaces/requestInfo.interface';
+import { Contactenos } from '../Interfaces/contactenos.interface';
 
 
 @Injectable({
@@ -34,5 +35,24 @@ export class RequestInfoService {
                     .pipe( map( (res:any) => {
                         return res;
                     }));
+  }
+
+  getEnviarPregunta(contactenos:Contactenos){
+
+    let data = new FormData();
+    
+    data.append('nombre', contactenos.nombre);
+    data.append('apellido', contactenos.apellido);
+    data.append('tel', contactenos.tel);
+    data.append('email', contactenos.email);
+    data.append('mensaje', contactenos.mensaje);
+      
+    return this.http.post(`${ this.url }/contactenos`, data)
+             .pipe(map( (res:any) => {
+    
+                return res;
+                
+            }));
+
   }
 }

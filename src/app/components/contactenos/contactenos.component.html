@@ -1,85 +1,90 @@
 <!--Inicio titulo contactenos -->
-    <div class="container animated fadeIn">
-        <div class="row mt-5 text-center d-block ">
-            <h5><span class="fas fa-phone-volume icono text-info"></span></h5>
-            <p class="lead font-weight-bold">Contáctenos</p>
-        </div>
+<div class="container animated fadeIn">
+    <div class="row mt-5 text-center d-block ">
+        <h5><span class="fas fa-phone-volume icono text-info"></span></h5>
+        <p class="lead font-weight-bold">Contáctenos</p>
     </div>
+</div>
 
 <!--Fin titulo contactenos -->
 
 <!-- Inicio formulario y mapa contactenos -->
 <div class="container shadow p-5 my-4 border rounded animated fadeIn">
-  <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-          <form [formGroup]="contactenos" (ngSubmit)="enviarPregunta()">
-              <div class="form-row">
-                  <div class="form-group col-md-12"  >
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 
-                      <label for="nombre">Nombre Completo</label>
-                      <input type="text"
-                            class="form-control" [ngClass]="{ 'is-invalid': !contactenos.get('nombrecompleto').valid}"
-                            placeholder="Nombre Completo"
-                            formControlName="nombrecompleto">
-                      <div *ngIf="contactenos.controls['nombrecompleto'].errors?.required"
-                            class="invalid-feedback">
-                             Su nombre es necesario
-                     </div>
-                     <div *ngIf="contactenos.controls['nombrecompleto'].errors?.minlength"
-                            class="invalid-feedback">
-                             Por lo menos 8 caracteres
-                     </div>
-                  </div>
-              </div>
-              <div class="form-row">
-                  <div class="form-group col-md-6">
+            <form [formGroup]="contactenos" (ngSubmit)="enviarPregunta()">
+                <ngb-alert [type]="type" class="my-2" *ngIf="alertClosed" (close)="alertClosed = false"> {{ mensaje }}</ngb-alert>
+                <div class="form-row">
+                    <div class="form-group col-xs-12 col-md-6">
 
-                      <label for="tel">Telefono</label>
-                      <input type="tel"
-                            class="form-control"
-                            placeholder="Telefono.."
-                            formControlName="telefono">
-                  </div>
-                  <div class="form-group col-md-6">
-                      <label for="email">Correo Electrónico</label>
-                      <input type="email"
-                            class="form-control" [ngClass]="{ 'is-invalid': !contactenos.get('correo').valid}"
-                            placeholder="micorreo@correo.com"
-                            formControlName="correo">
-                       <div *ngIf="contactenos.controls['correo'].errors?.required"
-                       class="invalid-feedback">
-                        Su correo es necesario
-                      </div>
-                      <div *ngIf="contactenos.controls['correo'].errors?.pattern"
-                            class="invalid-feedback">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" [ngClass]="{ 'is-invalid': !contactenos.get('nombre').valid}" placeholder="Nombre" formControlName="nombre">
+                        <div *ngIf="contactenos.controls['nombre'].errors?.required" class="invalid-feedback">
+                            Su nombre es necesario
+                        </div>
+                        <div *ngIf="contactenos.controls['nombre'].errors?.minlength" class="invalid-feedback">
+                            Por lo menos 8 caracteres
+                        </div>
+
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="nombre">Apellido</label>
+                        <input type="text" class="form-control" [ngClass]="{ 'is-invalid': !contactenos.get('apellido').valid}" placeholder="Apellido" formControlName="apellido">
+                        <div *ngIf="contactenos.controls['apellido'].errors?.required" class="invalid-feedback">
+                            Su apellido es necesario
+                        </div>
+                        <div *ngIf="contactenos.controls['apellido'].errors?.minlength" class="invalid-feedback">
+                            Por lo menos 8 caracteres
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        <label for="tel">Telefono</label>
+                        <input type="tel" class="form-control" placeholder="Telefono.." formControlName="tel">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" class="form-control" [ngClass]="{ 'is-invalid': !contactenos.get('email').valid}" placeholder="micorreo@correo.com" formControlName="email">
+                        <div *ngIf="contactenos.controls['email'].errors?.required" class="invalid-feedback">
+                            Su correo es necesario
+                        </div>
+                        <div *ngIf="contactenos.controls['email'].errors?.pattern" class="invalid-feedback">
                             Formato de correo incorrecta
-                     </div>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="mensaje">Mensaje</label>
-                  <textarea type="text"
-                            class="form-control" [ngClass]="{ 'is-invalid': !contactenos.get('pregunta').valid}"
-                            rows="2"
-                            placeholder="¿ Qué nos quieres preguntar ?"
-                            formControlName="pregunta">
-                  </textarea>
-                  <div *ngIf="!contactenos.controls['pregunta'].valid"
-                       class="invalid-feedback">
-                        Su pregunta es necesaria
-                  </div>
-              </div>
+                        </div>
+                    </div>
 
-              <button type="button" [disabled]="contactenos.invalid" class="btn btn-primary">Enviar</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea type="text" class="form-control" [ngClass]="{ 'is-invalid': !contactenos.get('mensaje').valid}" rows="2" placeholder="¿ Qué nos quieres preguntar ?" formControlName="mensaje">
+                    </textarea>
+                    <div *ngIf="contactenos.controls['mensaje'].errors?.required" class="invalid-feedback">
+                        Su mensaje es necesario
+                    </div>
+                    <div *ngIf="contactenos.controls['mensaje'].errors?.minlength" class="invalid-feedback">
+                        Por lo menos 8 caracteres
+                    </div>
+                    <div *ngIf="contactenos.controls['mensaje'].errors?.maxlength" class="invalid-feedback">
+                        Máximo 200 caracteres
+                    </div>
+                </div>
+
+                <button type="submit" [disabled]="contactenos.invalid" class="btn btn-primary">Enviar</button>
 
 
-          </form>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d7948.520680771376!2d-75.52938059704584!3d5.061496020449926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x8e476ffc2582a107%3A0xa3c7ccc099d3c9c8!2sParque+del+Agua%2C+Manizales%2C+Caldas!3m2!1d5.0671547!2d-75.52385!4m5!1s0x8e477aaad82a8661%3A0x68fa28ab90c76da4!2sCl.+4c+%2334a-2+a+34a-84%2C+Manizales%2C+Caldas!3m2!1d5.0593541!2d-75.5283972!5e0!3m2!1ses-419!2sco!4v1512381900915"
-              allowfullscreen="" frameborder="0" class="w-100 h-100 border rounded shadow-sm"></iframe>
-      </div>
-  </div>
+            </form>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d7948.520680771376!2d-75.52938059704584!3d5.061496020449926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x8e476ffc2582a107%3A0xa3c7ccc099d3c9c8!2sParque+del+Agua%2C+Manizales%2C+Caldas!3m2!1d5.0671547!2d-75.52385!4m5!1s0x8e477aaad82a8661%3A0x68fa28ab90c76da4!2sCl.+4c+%2334a-2+a+34a-84%2C+Manizales%2C+Caldas!3m2!1d5.0593541!2d-75.5283972!5e0!3m2!1ses-419!2sco!4v1512381900915"
+                allowfullscreen="" frameborder="0" class="w-100 h-100 border rounded shadow-sm"></iframe>
+        </div>
+    </div>
 </div>
 
 <!--Fin contactenos -->
